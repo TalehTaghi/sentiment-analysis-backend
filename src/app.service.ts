@@ -7,7 +7,7 @@ import { SentimentAnalysisInterface } from "./interfaces/sentiment-analysis.inte
 export class AppService {
   async sentimentAnalyse(twit: string): Promise<SentimentAnalysisInterface> {
     return new Promise<SentimentAnalysisInterface>((resolve, reject) => {
-      exec(`python3 src/nlp/predict_class.py "${twit}"`, (error, stdout) => {
+      exec(`python3 nlp/predict_class.py "${twit}"`, (error, stdout) => {
         if (error) {
           console.error(`exec error: ${error}`);
           reject(error);
